@@ -10,8 +10,8 @@
 
 * <a href="#about-the-POWDER-KEG">About the POWDER KEG</a>
     * <a href="#technologies-used">Technologies Used</a>
+* <a href="#Component-Architecture">Component Architecture</a>
 * <a href="#Set-Up-instructions">Set Up Instructions</a>
-* <a href="#API-setup-instructions">API Setup Instructions</a>
 * <a href="#known-bugs">Known Bugs</a>
 * <a href="#License">License</a>
 * <a href="#Acknowledgements">Acknowledgements</a>
@@ -28,6 +28,10 @@ POWDER KEG is a popup purveyor of fine explosives. This application helps the fi
 That means tracking inventory to make sure something strange doesn't just pop off into thin air. With this application, users and inventory managers can see list/menu of all available kegs. Each keg lists its name, brand, price per unit, price per keg, quantity, and type (e.g., M-80, sparkler, smoke bomb, etc.). Users can submit a form to add a new keg to a list and click on a keg to see its detail page, where a detail view displays how many fireworks are left in each keg. (The quantity of fireworks in each keg will vary.) Users can also click a button next to a keg whenever a firework is sold.
 
 <br />
+
+## Component Architecture
+
+<img src="components_wide.png" alt="diagram of React component tree" width="700"/>
 
 ## Technologies Used
 
