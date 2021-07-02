@@ -2,46 +2,46 @@
   {
     "name": "Odin",
     "brand": "@caistudio",
-    "unitPrice": "30",
-    "inventory": "128",
-    "kegPrice": "500",
-    "kegQuant": "20",
+    "unitPrice": 30,
+    "inventory": 128,
+    "kegPrice": 500,
+    "kegQuant": 20,
     "type": "chrysanthemum"
   },
   {
     "name": "Ifrit",
     "brand": "@caistudio",
-    "unitPrice": "23",
-    "inventory": "53",
-    "kegPrice": "400",
-    "kegQuant": "20",
+    "unitPrice": 23,
+    "inventory": 53,
+    "kegPrice": 400,
+    "kegQuant": 20,
     "type": "crossette"
   },
   {
     "name": "Shiva",
     "brand": "Zambelli",
-    "unitPrice": "16",
-    "inventory": "98",
-    "kegPrice": "300",
-    "kegQuant": "25",
+    "unitPrice": 16,
+    "inventory": 98,
+    "kegPrice": 300,
+    "kegQuant": 25,
     "type": "willow"
   },
   {
     "name": "Neo Bahamut",
     "brand": "Souza Pyrotechnics",
-    "unitPrice": "45",
-    "inventory": "13",
-    "kegPrice": "400",
-    "kegQuant": "10",
+    "unitPrice": 45,
+    "inventory": 13,
+    "kegPrice": 400,
+    "kegQuant": 10,
     "type": "comet"
   },
   {
     "name": "Knights of the Round",
     "brand": "Rozzi Fireworks",
-    "unitPrice": "12",
-    "inventory": "323",
-    "kegPrice": "600",
-    "kegQuant": "60",
+    "unitPrice": 12,
+    "inventory": 323,
+    "kegPrice": 600,
+    "kegQuant": 60,
     "type": "roman candle"
   }
 ]
