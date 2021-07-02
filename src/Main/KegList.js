@@ -1,8 +1,7 @@
 import Keg from "./Keg"
 
-export default () => (
-  <>
-    <h3>Keg List</h3>
-    <Keg />
-  </>
+export default ({ mainKegList = [] }) => (
+  mainKegList.map((keg, i) => (
+    <Keg key={i} keg={keg} />
+  ))
 )
