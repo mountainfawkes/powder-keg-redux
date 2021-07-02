@@ -7,7 +7,8 @@
     "inventory": 128,
     "kegPrice": 500,
     "kegQuant": 20,
-    "type": "chrysanthemum"
+    "type": "chrysanthemum",
+    "id": 1
   },
   {
     "name": "Ifrit",
@@ -17,7 +18,8 @@
     "inventory": 53,
     "kegPrice": 400,
     "kegQuant": 20,
-    "type": "crossette"
+    "type": "crossette",
+    "id": 2
   },
   {
     "name": "Shiva",
@@ -27,7 +29,8 @@
     "inventory": 98,
     "kegPrice": 300,
     "kegQuant": 25,
-    "type": "willow"
+    "type": "willow",
+    "id": 3
   },
   {
     "name": "Neo Bahamut",
@@ -37,7 +40,8 @@
     "inventory": 13,
     "kegPrice": 400,
     "kegQuant": 10,
-    "type": "comet"
+    "type": "comet",
+    "id": 4
   },
   {
     "name": "Knights of the Round",
@@ -47,6 +51,7 @@
     "inventory": 323,
     "kegPrice": 600,
     "kegQuant": 60,
-    "type": "roman candle"
+    "type": "roman candle",
+    "id": 5
   }
 ]
