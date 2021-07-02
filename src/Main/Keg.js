@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const Keg = ({ keg, whenClicked }) => {
+const Keg = ({ keg, handleKegSelection }) => {
   const {
     name,
     brand,
@@ -21,14 +21,9 @@ const Keg = ({ keg, whenClicked }) => {
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <div
-      onClick={() => whenClicked(id)}
-      onKeyDown={() => whenClicked(id)}
+      onClick={() => handleKegSelection(id)}
+      onKeyDown={() => handleKegSelection(id)}
       role='main'
-      style={
-      { borderStyle: `solid`,
-        border: `2px`,
-        borderRadius: `5%` }
-    }
     >
       <h3>{name}</h3>
       <p>{brand}</p>

@@ -38,16 +38,16 @@ class Main extends Component {
     let visibleState = null
     let buttonText = null
 
-    if (this.state.formVisible) {
-      visibleState = <CreateKegForm onAddNewKeg={this.handleAddNewKeg} />
+    if (this.state.selectedKeg != null) {
+      visibleState = <KegDetail keg={this.state.selectedKeg} />
       buttonText = `Return to kegs`
-    } else if (this.state.selectedKeg === !null) {
-      visibleState = <KegDetail />
+    } else if (this.state.formVisible) {
+      visibleState = <CreateKegForm onAddNewKeg={this.handleAddNewKeg} />
       buttonText = `Return to kegs`
     } else {
       visibleState = <KegList
         mainKegList={this.state.mainKegList}
-        onKegSelection={this.handleKegSelection}
+        handleKegSelection={this.handleKegSelection}
       />
       buttonText = `Add a new keg`
     }
