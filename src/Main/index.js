@@ -1,4 +1,5 @@
 import { Component } from "react"
+import PropTypes from 'prop-types'
 import KegList from "./KegList"
 import CreateKegForm from "./CreateKegForm"
 import KegDetail from "./KegDetail"
@@ -67,3 +68,17 @@ class Main extends Component {
 }
 
 export default Main
+
+Kegs.propTypes = {
+  Kegs: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      brand: PropTypes.string,
+      unitPrice: PropTypes.number,
+      inventory: PropTypes.number,
+      kegPrice: PropTypes.number,
+      kegQuant: PropTypes.number,
+      type: PropTypes.string,
+    })
+  ),
+}
