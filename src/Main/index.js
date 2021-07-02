@@ -27,12 +27,19 @@ class Main extends Component {
     }))
   }
 
+  handleAddNewKeg = newKeg => {
+    this.setState(prevState => ({
+      mainKegList: [...prevState.mainKegList, newKeg],
+      formVisible: false,
+    }))
+  }
+
   render() {
     let visibleState = null
     let buttonText = null
 
     if (this.state.formVisible) {
-      visibleState = <CreateKegForm />
+      visibleState = <CreateKegForm onAddNewKeg={this.handleAddNewKeg} />
       buttonText = `Return to kegs`
     } else if (this.state.selectedKeg === !null) {
       visibleState = <KegDetail />
@@ -48,10 +55,8 @@ class Main extends Component {
     return (
       <>
         <div style={
-          { margin: `20px`,
-            padding: `20px`,
-            width: `100vw`,
-            border: `2px` }
+          { margin: `40px`,
+            padding: `20px` }
           }
         >
           <h2>Inventory</h2>

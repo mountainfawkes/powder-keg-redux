@@ -9,7 +9,6 @@ const Keg = ({ keg }) => {
     kegQuant,
     inventory,
     type,
-    description,
   } = keg
 
   const setUSD = val => {
@@ -18,13 +17,17 @@ const Keg = ({ keg }) => {
   }
 
   return (
-    <div>
+    <div style={
+      { borderStyle: `solid`,
+        border: `2px`,
+        borderRadius: `5%` }
+    }
+    >
       <h3>{name}</h3>
       <p>{brand}</p>
       <p>Price: {setUSD(unitPrice)}</p>
       <p>In stock: {inventory}</p>
       <p>Keg price: {setUSD(kegPrice)}</p>
-      <p>{description}</p>
       <p>Ordnances per keg: {kegQuant}</p>
       <p>Ordnance type: {type}</p>
     </div>
@@ -41,5 +44,4 @@ Keg.propTypes = {
   kegPrice: PropTypes.number,
   kegQuant: PropTypes.number,
   type: PropTypes.string,
-  description: PropTypes.string,
 }
