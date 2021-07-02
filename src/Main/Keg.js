@@ -1,10 +1,16 @@
-export default () => (
-  <div>
-    <p>Name</p>
-    <p>Brand</p>
-    <p>Type</p>
-    <p>Quantity</p>
-    <p>Price per unit</p>
-    <p>Price per keg</p>
-  </div>
-)
+const Keg = ({ keg }) => {
+  const { name, brand, unitPrice, kegPrice, kegQuant, inventory, type } = keg
+  return (
+    <div>
+      <p>{name}</p>
+      <p>{brand}</p>
+      <p>{unitPrice}</p>
+      <p>{inventory}</p>
+      <p>{kegPrice}</p>
+      <p>{kegQuant}</p>
+      <p>{type}</p>
+    </div>
+  )
+}
+
+export default Keg
