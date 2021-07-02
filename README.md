@@ -23,9 +23,9 @@
 
 <br />
 
-POWDER KEG is a popup purveyor of fine explosives. This application helps the fine POWDER KEG folks keep everything under the POWDER KEG tent under POWDER KEG control&mdash;contained, if you will.
+POWDER KEG is a popup purveyor of fine explosives. This application helps the fine POWDER KEG folks keep everything under the POWDER KEG tent under POWDER KEG control&mdash;contained, if you will. That means tracking inventory to make sure something strange doesn't just pop off into thin air.
 
-That means tracking inventory to make sure something strange doesn't just pop off into thin air. With this application, users and inventory managers can see list/menu of all available kegs. Each keg lists its name, brand, price per unit, price per keg, quantity, and type (e.g., M-80, sparkler, smoke bomb, etc.). Users can submit a form to add a new keg to a list and click on a keg to see its detail page, where a detail view displays how many fireworks are left in each keg. (The quantity of fireworks in each keg will vary.) Users can also click a button next to a keg whenever a firework is sold.
+With this application, users and inventory managers can see list/menu of all available kegs. Each keg lists its name, brand, price per unit, price per keg, quantity, and type (e.g., M-80, sparkler, smoke bomb, etc.). Users can submit a form to add a new keg to a list and click on a keg to see its detail page, where a detail view displays how many fireworks are left in each keg. (The quantity of fireworks in each keg will vary.) Users can also click a button next to a keg whenever a firework is sold.
 
 <br />
 
