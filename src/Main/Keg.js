@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const Keg = ({ keg }) => {
+const Keg = ({ keg, whenClicked }) => {
   const {
     name,
     brand,
@@ -9,15 +9,22 @@ const Keg = ({ keg }) => {
     kegQuant,
     inventory,
     type,
+    id,
   } = keg
 
   const setUSD = val => {
+    const validVal = parseFloat(val)
     const obj = { style: `currency`, currency: `USD` }
-    return val.toLocaleString(`en-US`, obj)
+    return validVal.toLocaleString(`en-US`, obj)
   }
 
   return (
-    <div style={
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+    <div
+      onClick={() => whenClicked(id)}
+      onKeyDown={() => whenClicked(id)}
+      role='main'
+      style={
       { borderStyle: `solid`,
         border: `2px`,
         borderRadius: `5%` }
