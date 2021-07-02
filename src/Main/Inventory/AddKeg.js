@@ -1,3 +1,3 @@
 export default () => (
-  <h1>POWDER KEG</h1>
+  <button>Add</button>
 )
