@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Oki Hanabi",
+    "brand": "@caistudio",
+    "unitPrice": "30",
+    "kegPrice": "500",
+    "quantity": "20",
+    "type": "chrysanthemum"
+  },
+  {
+    "name": "Chisai Doragon",
+    "brand": "@caistudio",
+    "unitPrice": "23",
+    "kegPrice": "400",
+    "quantity": "20",
+    "type": "crossette"
+  },
+  {
+    "name": "Shiva",
+    "brand": "Zambelli",
+    "unitPrice": "16",
+    "kegPrice": "300",
+    "quantity": "25",
+    "type": "willow"
+  },
+  {
+    "name": "Neo Bahamut",
+    "brand": "Souza Pyrotechnics",
+    "unitPrice": "45",
+    "kegPrice": "400",
+    "quantity": "10",
+    "type": "comet"
+  },
+  {
+    "name": "Knights of the Round",
+    "brand": "Rozzi Fireworks",
+    "unitPrice": "12",
+    "kegPrice": "600",
+    "quantity": "60",
+    "type": "roman candle"
+  }
+]
