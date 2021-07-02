@@ -2,6 +2,7 @@
   {
     "name": "Odin",
     "brand": "@caistudio",
+    "description": "Watch your head. This rocket-mounted firework explodes at a maximum height of 300 feet, bursting in iridescent huges of teal, purple and orange. Recommended use over a large body of water.",
     "unitPrice": 30,
     "inventory": 128,
     "kegPrice": 500,
@@ -11,6 +12,7 @@
   {
     "name": "Ifrit",
     "brand": "@caistudio",
+    "description": "A dragon's tongue is forked; so is Ifrit's. This display reproduces plumes of fire from a dragon's molten lungs in dual displays of red and orange pyrotechnics. Explodes at a maximum height of 200 feet.",
     "unitPrice": 23,
     "inventory": 53,
     "kegPrice": 400,
@@ -20,6 +22,7 @@
   {
     "name": "Shiva",
     "brand": "Zambelli",
+    "description": "Shiva's icy veins explode in this cascading, willow-like firework that lingers in the sky for up to 30 seconds after detonation.",
     "unitPrice": 16,
     "inventory": 98,
     "kegPrice": 300,
@@ -29,6 +32,7 @@
   {
     "name": "Neo Bahamut",
     "brand": "Souza Pyrotechnics",
+    "description": "A bigger version of its sibling, Bahamut, Neo Bahamut renders a single yellow spire after detonation. As the ordnance falls, it increases in vibrance, illuminating the sky. Do not use with other ordnances.",
     "unitPrice": 45,
     "inventory": 13,
     "kegPrice": 400,
@@ -38,6 +42,7 @@
   {
     "name": "Knights of the Round",
     "brand": "Rozzi Fireworks",
+    "description": "Consider the roman candle as a cannon. Knights fires successive ordnances up to 400 feet, each exploding in six distinct pyrotechnic patterns.",
     "unitPrice": 12,
     "inventory": 323,
     "kegPrice": 600,
