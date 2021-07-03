@@ -5,10 +5,7 @@ const Keg = ({ keg, handleKegSelection }) => {
     name,
     brand,
     unitPrice,
-    kegPrice,
-    kegQuant,
     inventory,
-    type,
     id,
   } = keg
 
@@ -29,9 +26,6 @@ const Keg = ({ keg, handleKegSelection }) => {
       <p>{brand}</p>
       <p>Price: {setUSD(unitPrice)}</p>
       <p>In stock: {inventory}</p>
-      <p>Keg price: {setUSD(kegPrice)}</p>
-      <p>Ordnances per keg: {kegQuant}</p>
-      <p>Ordnance type: {type}</p>
     </div>
   )
 }
@@ -43,7 +37,4 @@ Keg.propTypes = {
   brand: PropTypes.string,
   unitPrice: PropTypes.number,
   inventory: PropTypes.number,
-  kegPrice: PropTypes.number,
-  kegQuant: PropTypes.number,
-  type: PropTypes.string,
 }
