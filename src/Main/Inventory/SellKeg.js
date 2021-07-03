@@ -1,3 +1,3 @@
 export default () => (
-  <button type='button'>Add</button>
+  <button type='button'>SELL KEG</button>
 )
