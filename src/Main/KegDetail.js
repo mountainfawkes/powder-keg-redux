@@ -30,9 +30,11 @@ export default ({ keg }) => {
 
       <div>
         <h3>Additional information and pricing options</h3>
-        <span>Price per keg ({kegQuant} ordnances): {setUSD(kegPrice)}</span>
-        <span>Ordnance type: {type}</span>
-        <span>Ordnance id: {id}</span>
+        <p>Price per keg ({kegQuant} ordnances): {setUSD(kegPrice)}</p>
+        <p>Ordnance type: {type}</p>
+        <p><em>For more information about ordnance type, refer to
+          <a href='youtube.com'>this short video</a>.</em></p>
+        <p>Ordnance id: {id}</p>
       </div>
     </>
   )
