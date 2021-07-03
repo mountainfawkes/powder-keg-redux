@@ -7,6 +7,7 @@ const Keg = ({ keg, handleKegSelection }) => {
     unitPrice,
     inventory,
     id,
+    kegQuant,
   } = keg
 
   const setUSD = val => {
@@ -26,6 +27,7 @@ const Keg = ({ keg, handleKegSelection }) => {
       <p>{brand}</p>
       <p>Price: {setUSD(unitPrice)}</p>
       <p>In stock: {inventory}</p>
+      <p>Kegs in stock: {Math.floor(inventory / kegQuant)}</p>
     </div>
   )
 }
