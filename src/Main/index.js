@@ -41,29 +41,19 @@ class Main extends Component {
     }))
   }
 
-  // // inventory is at this.state.mainKegList[i].inventory
-  // // I have to copy the keg list from the previous state
-  // // then select one of the kegs out of previous state
-  // // then alter the inventory property of the selected keg
-
-  // handleUpdateInventory = (increment, id) => {
-  //   this.setState(prevState => ({
-  //     mainKegList: prevState.mainKegList.filter((keg, i, arr) => {
-  //       const selectKeg = (keg.id === id)[0]
-  //       selectKeg.inventory += increment
-  //       return
-  //     })
-  //   }))
-  // }
-
-  // handleUpdateInventory = (newInventory, id) => {
-  //   const kegToUpdate = this.mainKegList.filter(keg => keg.id === id)[0]
-  //   kegToUpdate.inventory = newInventory
-  //   this.setState(prevState => ({
-  //     mainKegList:
-  //     [...prevState.mainKegList[kegToUpdate.id] = kegToUpdate],
-  //   }))
-  // }
+  handleUpdateInventory = (id, increment) => {
+    this.setState(prevState => ({
+      mainKegList: prevState.mainKegList.filter((keg, i, arr) => {
+        if (arr[i].id === id) {
+          console.log(increment)
+          console.log(arr[i].inventory)
+          arr[i].inventory += increment
+          console.log(arr[i].inventory)
+        }
+        return arr
+      }),
+    }))
+  }
 
   render() {
     let visibleState = null
@@ -79,6 +69,7 @@ class Main extends Component {
       visibleState = <KegList
         mainKegList={this.state.mainKegList}
         handleKegSelection={this.handleKegSelection}
+        handleUpdateInventory={this.handleUpdateInventory}
       />
       buttonText = `Add a new keg`
     }
