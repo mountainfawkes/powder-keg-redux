@@ -16,9 +16,16 @@ class Main extends Component {
   }
 
   handleClick = () => {
-    this.setState(prevState => ({
-      formVisible: !prevState.formVisible,
-    }))
+    if (this.state.selectedKeg != null) {
+      this.setState({
+        formVisible: false,
+        selectedKeg: null,
+      })
+    } else {
+      this.setState(prevState => ({
+        formVisible: !prevState.formVisible,
+      }))
+    }
   }
 
   handleKegSelection = id => {
