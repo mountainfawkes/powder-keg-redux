@@ -1,3 +1,4 @@
+import Inventory from "./Inventory"
 import Keg from "./Keg"
 
 export default ({ mainKegList, handleKegSelection }) => (
@@ -10,5 +11,6 @@ export default ({ mainKegList, handleKegSelection }) => (
         key={keg.id}
       />
     ))}
+    <Inventory />
   </>
 )
