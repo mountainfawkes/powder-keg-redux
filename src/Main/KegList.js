@@ -1,7 +1,7 @@
 import Inventory from "./Inventory"
 import Keg from "./Keg"
 
-export default ({ mainKegList, handleKegSelection }) => (
+export default ({ mainKegList, handleKegSelection, handleUpdateInventory }) => (
   <>
     {mainKegList.map(keg => (
       <div>
@@ -11,7 +11,14 @@ export default ({ mainKegList, handleKegSelection }) => (
           id={keg.id}
           key={keg.id}
         />
-        <Inventory />
+        <div id={keg.id} key={keg.id + (2 * mainKegList.length)}>
+          <Inventory
+            handleUpdateInventory={handleUpdateInventory}
+            keg={keg}
+            id={keg.id}
+            key={keg.id + mainKegList.length}
+          />
+        </div>
       </div>
     ))}
   </>
