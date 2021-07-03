@@ -14,7 +14,7 @@ export default ({ mainKegList, handleKegSelection, handleUpdateInventory }) => (
         <div id={keg.id} key={keg.id + (2 * mainKegList.length)}>
           <Inventory
             handleUpdateInventory={handleUpdateInventory}
-            keg={keg}
+            kegQuant={keg.kegQuant}
             id={keg.id}
             key={keg.id + mainKegList.length}
           />

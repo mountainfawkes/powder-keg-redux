@@ -3,10 +3,10 @@ export default ({ handleUpdateInventory, id }) => (
   <button
     type='submit'
     onClick={() => {
-      handleUpdateInventory(id, 0.5)
+      handleUpdateInventory(id, -1)
     }
     }
   >
-    SELL ORD
+    Sell ord
   </button>
 )
