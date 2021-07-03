@@ -44,11 +44,8 @@ class Main extends Component {
   handleUpdateInventory = (id, increment) => {
     this.setState(prevState => ({
       mainKegList: prevState.mainKegList.filter((keg, i, arr) => {
-        if (arr[i].id === id) {
-          console.log(increment)
-          console.log(arr[i].inventory)
+        if (arr[i].id === id && (arr[i].inventory + increment >= 0)) {
           arr[i].inventory += increment
-          console.log(arr[i].inventory)
         }
         return arr
       }),
