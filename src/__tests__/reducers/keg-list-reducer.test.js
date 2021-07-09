@@ -117,4 +117,12 @@ describe(`kegListReducer`, () => {
       } },
     })
   })
+
+  // TEST 6, hide form
+
+  test(`Should set the formVisible prop to false`, () => {
+    const action = a.hideForm()
+
+    expect(kegListReducer({}, action)).toEqual({ formVisible: false })
+  })
 })

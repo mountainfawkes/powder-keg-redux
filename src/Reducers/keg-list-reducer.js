@@ -27,6 +27,9 @@ export default (state = {}, action) => {
     case aTypes.toggleForm:
       return { ...state,
         formVisible: !state.formVisible }
+    case aTypes.hideForm:
+      return { ...state,
+        formVisible: false }
     case aTypes.selectKeg:
       return { ...state,
         selectedKeg: { [id]: {
