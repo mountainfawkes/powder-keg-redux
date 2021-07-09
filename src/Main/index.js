@@ -1,11 +1,10 @@
 import { Component } from "react"
 import { connect } from 'react-redux'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import KegList from "./KegList"
 import CreateKegForm from "./CreateKegForm"
 import KegDetail from "./KegDetail"
-// import Kegs from '../Data/seedKegs'
-// import kegListReducer from "../Reducers/keg-list-reducer"
+import * as a from '../Actions/index'
 
 class Main extends Component {
   constructor(props) {
@@ -38,25 +37,7 @@ class Main extends Component {
 
   handleAddNewKeg = newKeg => {
     const { dispatch } = this.props
-    const { name,
-      brand,
-      description,
-      unitPrice,
-      inventory,
-      kegPrice,
-      kegQuant,
-      ordType,
-      id } = newKeg
-    const action = { type: `ADD_KEG`,
-      name,
-      brand,
-      description,
-      unitPrice,
-      inventory,
-      kegPrice,
-      kegQuant,
-      ordType,
-      id }
+    const action = a.addKeg(newKeg)
     dispatch(action)
 
     this.setState({ formVisible: false })
@@ -66,35 +47,10 @@ class Main extends Component {
     const { dispatch } = this.props
     const thisKeg = this.props.mainKegList[id]
     console.log(thisKeg)
-    const { name,
-      brand,
-      description,
-      unitPrice,
-      kegPrice,
-      kegQuant,
-      ordType } = thisKeg
     const newInventory = thisKeg.inventory + increment
-    const action = { type: `ADD_KEG`,
-      name,
-      brand,
-      description,
-      unitPrice,
-      inventory: newInventory,
-      kegPrice,
-      kegQuant,
-      ordType,
-      id }
+    const action = a.updateKeg(thisKeg, newInventory)
     console.log(action)
     dispatch(action)
-
-    // this.setState(prevState => ({
-    //   mainKegList: prevState.mainKegList.filter((keg, i, arr) => {
-    //     if (arr[i].id === id && (arr[i].inventory + increment >= 0)) {
-    //       arr[i].inventory += increment
-    //     }
-    //     return arr
-    //   }),
-    // }))
   }
 
   render() {
@@ -136,23 +92,23 @@ class Main extends Component {
   }
 }
 
+Main.propTypes = {
+  mainKegList: PropTypes.objectOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      brand: PropTypes.string,
+      unitPrice: PropTypes.number,
+      inventory: PropTypes.number,
+      kegPrice: PropTypes.number,
+      kegQuant: PropTypes.number,
+      ordType: PropTypes.string,
+    })
+  ),
+}
+
 const mapStateToProps = state => ({ mainKegList: state })
 
 // eslint-disable-next-line no-class-assign
 Main = connect(mapStateToProps)(Main)
 
 export default Main
-
-// Kegs.propTypes = {
-//   Kegs: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       name: PropTypes.string,
-//       brand: PropTypes.string,
-//       unitPrice: PropTypes.number,
-//       inventory: PropTypes.number,
-//       kegPrice: PropTypes.number,
-//       kegQuant: PropTypes.number,
-//       ordType: PropTypes.string,
-//     })
-//   ),
-// }
