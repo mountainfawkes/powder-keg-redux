@@ -47,3 +47,25 @@ export const updateKeg = (thisKeg, newInventory) => {
 }
 
 export const toggleForm = () => ({ type: aTypes.toggleForm })
+
+export const selectKeg = thisKeg => {
+  const { name,
+    brand,
+    description,
+    unitPrice,
+    inventory,
+    kegPrice,
+    kegQuant,
+    ordType,
+    id } = thisKeg
+  return { type: aTypes.selectKeg,
+    name,
+    brand,
+    description,
+    unitPrice,
+    inventory,
+    kegPrice,
+    kegQuant,
+    ordType,
+    id }
+}

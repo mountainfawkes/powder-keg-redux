@@ -86,4 +86,31 @@ describe(`kegListReducer`, () => {
 
     expect(kegListReducer({}, action)).toEqual({ formVisible: true })
   })
+
+  // TEST 5, set selectedKeg
+
+  test(`Should set the property selectedKeg to a given keg`, () => {
+    const { name,
+      brand,
+      description,
+      unitPrice,
+      inventory,
+      kegPrice,
+      kegQuant,
+      ordType,
+      id } = anotherKeg
+    const action = a.selectKeg(anotherKeg)
+
+    expect(kegListReducer({}, action)).toEqual({ selectedKeg: {
+      [id]: { name,
+        brand,
+        description,
+        unitPrice,
+        inventory,
+        kegPrice,
+        kegQuant,
+        ordType,
+        id },
+    } })
+  })
 })
