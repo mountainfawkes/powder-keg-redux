@@ -10,10 +10,10 @@ import Kegs from '../Data/seedKegs'
 class Main extends Component {
   constructor(props) {
     super(props)
+    console.log(props.mainKegList)
     this.state = {
       formVisible: false,
       selectedKeg: null,
-      // mainKegList: Kegs,
     }
   }
 
@@ -62,18 +62,18 @@ class Main extends Component {
     this.setState({ formVisible: false })
   }
 
-  handleUpdateInventory = (thisKeg, increment) => {
+  handleUpdateInventory = (id, increment) => {
     const { dispatch } = this.props
+    const thisKeg = this.props.mainKegList[id]
+    console.log(thisKeg)
     const { name,
       brand,
       description,
       unitPrice,
-      inventory,
       kegPrice,
       kegQuant,
-      ordType,
-      id } = thisKeg
-    const newInventory = increment + inventory
+      ordType } = thisKeg
+    const newInventory = thisKeg.inventory + increment
     const action = { type: `ADD_KEG`,
       name,
       brand,
@@ -84,6 +84,7 @@ class Main extends Component {
       kegQuant,
       ordType,
       id }
+    console.log(action)
     dispatch(action)
 
     // this.setState(prevState => ({
