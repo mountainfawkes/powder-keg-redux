@@ -1,8 +1,9 @@
 import kegListReducer from '../../Reducers/keg-list-reducer'
+import * as a from '../../Actions/index'
 
 describe(`kegListReducer`, () => {
   let action
-  const kegData = {
+  const anotherKeg = {
     name: `Bahamut ZERO`,
     brand: `Cacodemonic Cacophonies`,
     // eslint-disable-next-line max-len
@@ -32,19 +33,8 @@ describe(`kegListReducer`, () => {
       kegPrice,
       kegQuant,
       ordType,
-      id } = kegData
-    action = {
-      type: `ADD_KEG`,
-      name,
-      brand,
-      description,
-      unitPrice,
-      inventory,
-      kegPrice,
-      kegQuant,
-      ordType,
-      id,
-    }
+      id } = anotherKeg
+    action = a.addKeg(anotherKeg)
 
     expect(kegListReducer({}, action)).toEqual({
       [id]: {
@@ -72,20 +62,10 @@ describe(`kegListReducer`, () => {
       kegPrice,
       kegQuant,
       ordType,
-      id } = kegData
+      id } = anotherKeg
     const newInventory = inventory + 1
-    const action = {
-      type: `ADD_KEG`,
-      name,
-      brand,
-      description,
-      unitPrice,
-      inventory: newInventory,
-      kegPrice,
-      kegQuant,
-      ordType,
-      id,
-    }
+    const action = a.updateKeg(anotherKeg, newInventory)
+
     expect(kegListReducer({}, action)).toEqual({ [id]: {
       name,
       brand,
@@ -97,5 +77,13 @@ describe(`kegListReducer`, () => {
       ordType,
       id,
     } })
+  })
+
+  // TEST 4, set form visibility
+
+  test(`Should toggle the visibility of CreateKegForm`, () => {
+    const action = a.toggleForm()
+
+    expect(kegListReducer({}, action)).toEqual({ formVisible: true })
   })
 })

@@ -1,4 +1,4 @@
-export default (state = [], action) => {
+export default (state = {}, action) => {
   const { name,
     brand,
     description,
@@ -22,6 +22,9 @@ export default (state = [], action) => {
           ordType,
           id,
         } }
+    case `TOGGLE_FORM`:
+      return { ...state,
+        formVisible: !state.formVisible }
     default:
       return state
   }

@@ -34,7 +34,7 @@ export const updateKeg = (thisKeg, newInventory) => {
     kegQuant,
     ordType,
     id } = thisKeg
-  return { type: aTypes.updateKeg,
+  return { type: aTypes.addKeg,
     name,
     brand,
     description,
@@ -45,3 +45,5 @@ export const updateKeg = (thisKeg, newInventory) => {
     ordType,
     id }
 }
+
+export const toggleForm = () => ({ type: aTypes.toggleForm })

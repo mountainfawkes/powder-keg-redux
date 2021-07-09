@@ -1,2 +1,2 @@
-export const addKeg = `addKeg`
-export const updateKeg = `updateKeg`
+export const addKeg = `ADD_KEG`
+export const toggleForm = `TOGGLE_FORM`
