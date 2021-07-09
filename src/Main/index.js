@@ -1,9 +1,11 @@
 import { Component } from "react"
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import KegList from "./KegList"
 import CreateKegForm from "./CreateKegForm"
 import KegDetail from "./KegDetail"
 import Kegs from '../Data/seedKegs'
+// import kegListReducer from "../Reducers/keg-list-reducer"
 
 class Main extends Component {
   constructor(props) {
@@ -11,7 +13,7 @@ class Main extends Component {
     this.state = {
       formVisible: false,
       selectedKeg: null,
-      mainKegList: Kegs,
+      // mainKegList: Kegs,
     }
   }
 
@@ -29,27 +31,69 @@ class Main extends Component {
   }
 
   handleKegSelection = id => {
-    this.setState(prevState => ({
-      selectedKeg: prevState.mainKegList.filter(keg => keg.id === id)[0],
+    this.setState(() => ({
+      selectedKeg: this.props.mainKegList[id],
     }))
   }
 
   handleAddNewKeg = newKeg => {
-    this.setState(prevState => ({
-      mainKegList: [...prevState.mainKegList, newKeg],
-      formVisible: false,
-    }))
+    const { dispatch } = this.props
+    const { name,
+      brand,
+      description,
+      unitPrice,
+      inventory,
+      kegPrice,
+      kegQuant,
+      ordType,
+      id } = newKeg
+    const action = { type: `ADD_KEG`,
+      name,
+      brand,
+      description,
+      unitPrice,
+      inventory,
+      kegPrice,
+      kegQuant,
+      ordType,
+      id }
+    dispatch(action)
+
+    this.setState({ formVisible: false })
   }
 
-  handleUpdateInventory = (id, increment) => {
-    this.setState(prevState => ({
-      mainKegList: prevState.mainKegList.filter((keg, i, arr) => {
-        if (arr[i].id === id && (arr[i].inventory + increment >= 0)) {
-          arr[i].inventory += increment
-        }
-        return arr
-      }),
-    }))
+  handleUpdateInventory = (thisKeg, increment) => {
+    const { dispatch } = this.props
+    const { name,
+      brand,
+      description,
+      unitPrice,
+      inventory,
+      kegPrice,
+      kegQuant,
+      ordType,
+      id } = thisKeg
+    const newInventory = increment + inventory
+    const action = { type: `ADD_KEG`,
+      name,
+      brand,
+      description,
+      unitPrice,
+      inventory: newInventory,
+      kegPrice,
+      kegQuant,
+      ordType,
+      id }
+    dispatch(action)
+
+    // this.setState(prevState => ({
+    //   mainKegList: prevState.mainKegList.filter((keg, i, arr) => {
+    //     if (arr[i].id === id && (arr[i].inventory + increment >= 0)) {
+    //       arr[i].inventory += increment
+    //     }
+    //     return arr
+    //   }),
+    // }))
   }
 
   render() {
@@ -64,7 +108,7 @@ class Main extends Component {
       buttonText = `Return to kegs`
     } else {
       visibleState = <KegList
-        mainKegList={this.state.mainKegList}
+        mainKegList={this.props.mainKegList}
         handleKegSelection={this.handleKegSelection}
         handleUpdateInventory={this.handleUpdateInventory}
       />
@@ -91,6 +135,11 @@ class Main extends Component {
   }
 }
 
+const mapStateToProps = state => ({ mainKegList: state })
+
+// eslint-disable-next-line no-class-assign
+Main = connect(mapStateToProps)(Main)
+
 export default Main
 
 Kegs.propTypes = {
@@ -102,7 +151,7 @@ Kegs.propTypes = {
       inventory: PropTypes.number,
       kegPrice: PropTypes.number,
       kegQuant: PropTypes.number,
-      type: PropTypes.string,
+      ordType: PropTypes.string,
     })
   ),
 }

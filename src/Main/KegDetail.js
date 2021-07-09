@@ -9,7 +9,7 @@ export default ({ keg }) => {
     kegPrice,
     kegQuant,
     inventory,
-    type,
+    ordType,
     id,
     description,
   } = keg
@@ -31,7 +31,7 @@ export default ({ keg }) => {
       <div>
         <h3>Additional information and pricing options</h3>
         <p>Price per keg ({kegQuant} ordnances): {setUSD(kegPrice)}</p>
-        <p>Ordnance type: {type}</p>
+        <p>Ordnance type: {ordType}</p>
         <p><em>
           For more information about ordnance type,
           refer to <a
@@ -52,6 +52,6 @@ Keg.propTypes = {
   kegPrice: PropTypes.number,
   kegQuant: PropTypes.number,
   inventory: PropTypes.number,
-  type: PropTypes.string,
+  ordType: PropTypes.string,
   description: PropTypes.string,
 }

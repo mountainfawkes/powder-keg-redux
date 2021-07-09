@@ -10,7 +10,7 @@ export default ({ onAddNewKeg }) => {
       kegPrice: event.target.kegPrice.value,
       kegQuant: event.target.kegQuant.value,
       inventory: event.target.inventory.value,
-      type: event.target.type.value,
+      ordType: event.target.ordType.value,
       description: event.target.description.value,
       id: v4(),
     })
@@ -56,9 +56,9 @@ export default ({ onAddNewKeg }) => {
           </label>
         </div>
         <div>
-          <label htmlFor='type'>
+          <label htmlFor='ordType'>
             Type:
-            <input type='text' name='type' required />
+            <input type='text' name='ordType' required />
           </label>
         </div>
         <p>Description:</p>
