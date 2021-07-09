@@ -70,3 +70,5 @@ export const selectKeg = thisKeg => {
     ordType,
     id }
 }
+
+export const clearSelected = () => ({ type: aTypes.clearSelected })

@@ -43,6 +43,8 @@ export default (state = {}, action) => {
           ordType,
           id,
         } } }
+    case aTypes.clearSelected:
+      return state
     default:
       return state
   }

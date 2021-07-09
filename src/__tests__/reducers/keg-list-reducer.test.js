@@ -125,4 +125,12 @@ describe(`kegListReducer`, () => {
 
     expect(kegListReducer({}, action)).toEqual({ formVisible: false })
   })
+
+  // TEST 7, clear selected keg
+
+  test(`Should reset the selectedKeg prop to null`, () => {
+    const action = a.clearSelected()
+
+    expect(kegListReducer({}, action)).toEqual({ selectedKeg: null })
+  })
 })
