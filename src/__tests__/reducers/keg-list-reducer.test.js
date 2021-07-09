@@ -15,9 +15,13 @@ describe(`kegListReducer`, () => {
     id: 6,
   }
 
+  // TEST 1, return default state
+
   test(`Should return the default state if there is no action`, () => {
     expect(kegListReducer({}, { type: null })).toEqual({})
   })
+
+  // TEST 2, add a keg to the keg list
 
   test(`Should add a keg to the keg list`, () => {
     const { name,

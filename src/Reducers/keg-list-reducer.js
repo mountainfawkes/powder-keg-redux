@@ -26,7 +26,3 @@ export default (state = {}, action) => {
       return state
   }
 }
-
-// add a keg
-// select and return a keg
-// select and increment a keg
