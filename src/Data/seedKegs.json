@@ -8,7 +8,7 @@
     "kegPrice": 500,
     "kegQuant": 20,
     "type": "chrysanthemum",
-    "id": 1
+    "id": 0
   },
   {
     "name": "Ifrit",
@@ -19,7 +19,7 @@
     "kegPrice": 400,
     "kegQuant": 20,
     "type": "crossette",
-    "id": 2
+    "id": 1
   },
   {
     "name": "Shiva",
@@ -30,7 +30,7 @@
     "kegPrice": 300,
     "kegQuant": 25,
     "type": "willow",
-    "id": 3
+    "id": 2
   },
   {
     "name": "Neo Bahamut",
@@ -41,7 +41,7 @@
     "kegPrice": 400,
     "kegQuant": 10,
     "type": "comet",
-    "id": 4
+    "id": 3
   },
   {
     "name": "Knights of the Round",
@@ -52,6 +52,6 @@
     "kegPrice": 600,
     "kegQuant": 60,
     "type": "roman candle",
-    "id": 5
+    "id": 4
   }
 ]
