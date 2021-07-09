@@ -60,4 +60,42 @@ describe(`kegListReducer`, () => {
       },
     })
   })
+
+  // TEST 3, should update the inventory by the given increment
+
+  test(`Should update the inventory with a given increment`, () => {
+    const { name,
+      brand,
+      description,
+      unitPrice,
+      inventory,
+      kegPrice,
+      kegQuant,
+      ordType,
+      id } = kegData
+    const newInventory = inventory + 1
+    const action = {
+      type: `ADD_KEG`,
+      name,
+      brand,
+      description,
+      unitPrice,
+      inventory: newInventory,
+      kegPrice,
+      kegQuant,
+      ordType,
+      id,
+    }
+    expect(kegListReducer({}, action)).toEqual({ [id]: {
+      name,
+      brand,
+      description,
+      unitPrice,
+      inventory: newInventory,
+      kegPrice,
+      kegQuant,
+      ordType,
+      id,
+    } })
+  })
 })
