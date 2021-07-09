@@ -11,19 +11,21 @@ export default (state = {}, action) => {
     ordType,
     id } = action
   switch (action.type) {
-    case aTypes.addKeg:
-      return { ...state,
-        [id]: {
-          name,
-          brand,
-          description,
-          unitPrice,
-          inventory,
-          kegPrice,
-          kegQuant,
-          ordType,
-          id,
-        } }
+    case aTypes.addKeg: {
+      const newState = { [id]: {
+        name,
+        brand,
+        description,
+        unitPrice,
+        inventory,
+        kegPrice,
+        kegQuant,
+        ordType,
+        id,
+      },
+      formVisible: false }
+      return { ...state, ...newState }
+    }
     case aTypes.toggleForm:
       return { ...state,
         formVisible: !state.formVisible }

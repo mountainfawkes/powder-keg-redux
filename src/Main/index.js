@@ -10,29 +10,42 @@ class Main extends Component {
   constructor(props) {
     super(props)
     console.log(props.mainKegList)
-    this.state = {
-      formVisible: false,
-      selectedKeg: null,
-    }
+    // this.state = {
+    //   formVisible: false,
+    //   selectedKeg: null,
+    // }
   }
 
   handleClick = () => {
-    if (this.state.selectedKeg != null) {
-      this.setState({
-        formVisible: false,
-        selectedKeg: null,
-      })
+    if (this.props.selectedKeg != null) {
+      const { dispatch } = this.props
+      const action = a.resetMain()
+      dispatch(action)
+
+      // this.setState({
+      //   formVisible: false,
+      //   selectedKeg: null,
+      // })
     } else {
-      this.setState(prevState => ({
-        formVisible: !prevState.formVisible,
-      }))
+      const { dispatch } = this.props
+      const action = a.toggleForm()
+      dispatch(action)
+
+      // this.setState(prevState => ({
+      //   formVisible: !prevState.formVisible,
+      // }))
     }
   }
 
   handleKegSelection = id => {
-    this.setState(() => ({
-      selectedKeg: this.props.mainKegList[id],
-    }))
+    const thisKeg = this.props.mainKegList[id]
+    const { dispatch } = this.props
+    const action = a.selectKeg(thisKeg)
+    dispatch(action)
+
+    // this.setState(() => ({
+    //   selectedKeg: this.props.mainKegList[id],
+    // }))
   }
 
   handleAddNewKeg = newKeg => {
@@ -46,10 +59,8 @@ class Main extends Component {
   handleUpdateInventory = (id, increment) => {
     const { dispatch } = this.props
     const thisKeg = this.props.mainKegList[id]
-    console.log(thisKeg)
     const newInventory = thisKeg.inventory + increment
     const action = a.updateKeg(thisKeg, newInventory)
-    console.log(action)
     dispatch(action)
   }
 
@@ -106,7 +117,11 @@ Main.propTypes = {
   ),
 }
 
-const mapStateToProps = state => ({ mainKegList: state })
+const mapStateToProps = state => ({
+  mainKegList: state,
+  formVisible: false,
+  selectedKeg: null,
+})
 
 // eslint-disable-next-line no-class-assign
 Main = connect(mapStateToProps)(Main)

@@ -49,6 +49,7 @@ describe(`kegListReducer`, () => {
         ordType,
         id,
       },
+      formVisible: false,
     })
   })
 
@@ -77,7 +78,8 @@ describe(`kegListReducer`, () => {
       kegQuant,
       ordType,
       id,
-    } })
+    },
+    formVisible: false })
   })
 
   // TEST 4, set form visibility
