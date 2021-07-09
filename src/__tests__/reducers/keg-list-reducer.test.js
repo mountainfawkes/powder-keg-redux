@@ -11,7 +11,7 @@ describe(`kegListReducer`, () => {
     inventory: 53,
     kegPrice: 650,
     kegQuant: 10,
-    type: `crossette`,
+    ordType: `crossette`,
     id: 6,
   }
 
@@ -31,10 +31,10 @@ describe(`kegListReducer`, () => {
       inventory,
       kegPrice,
       kegQuant,
-      type,
+      ordType,
       id } = kegData
     action = {
-      actionType: `ADD_KEG`,
+      type: `ADD_KEG`,
       name,
       brand,
       description,
@@ -42,7 +42,7 @@ describe(`kegListReducer`, () => {
       inventory,
       kegPrice,
       kegQuant,
-      type,
+      ordType,
       id,
     }
 
@@ -55,7 +55,7 @@ describe(`kegListReducer`, () => {
         inventory,
         kegPrice,
         kegQuant,
-        type,
+        ordType,
         id,
       },
     })

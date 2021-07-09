@@ -6,9 +6,9 @@ export default (state = {}, action) => {
     inventory,
     kegPrice,
     kegQuant,
-    type,
+    ordType,
     id } = action
-  switch (action.actionType) {
+  switch (action.type) {
     case `ADD_KEG`:
       return { ...state,
         [id]: {
@@ -19,7 +19,7 @@ export default (state = {}, action) => {
           inventory,
           kegPrice,
           kegQuant,
-          type,
+          ordType,
           id,
         } }
     default:
