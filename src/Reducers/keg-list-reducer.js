@@ -1,3 +1,5 @@
+import * as aTypes from '../Actions/ActionTypes'
+
 export default (state = {}, action) => {
   const { name,
     brand,
@@ -9,7 +11,7 @@ export default (state = {}, action) => {
     ordType,
     id } = action
   switch (action.type) {
-    case `ADD_KEG`:
+    case aTypes.addKeg:
       return { ...state,
         [id]: {
           name,
@@ -22,9 +24,22 @@ export default (state = {}, action) => {
           ordType,
           id,
         } }
-    case `TOGGLE_FORM`:
+    case aTypes.toggleForm:
       return { ...state,
         formVisible: !state.formVisible }
+    case aTypes.selectKeg:
+      return { ...state,
+        selectedKeg: { [id]: {
+          name,
+          brand,
+          description,
+          unitPrice,
+          inventory,
+          kegPrice,
+          kegQuant,
+          ordType,
+          id,
+        } } }
     default:
       return state
   }

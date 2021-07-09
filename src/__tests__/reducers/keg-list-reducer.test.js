@@ -1,5 +1,6 @@
 import kegListReducer from '../../Reducers/keg-list-reducer'
 import * as a from '../../Actions/index'
+import seedKegs from '../../Data/seedKegs'
 
 describe(`kegListReducer`, () => {
   let action
@@ -13,7 +14,7 @@ describe(`kegListReducer`, () => {
     kegPrice: 650,
     kegQuant: 10,
     ordType: `crossette`,
-    id: 6,
+    id: 5,
   }
 
   // TEST 1, return default state
@@ -90,6 +91,7 @@ describe(`kegListReducer`, () => {
   // TEST 5, set selectedKeg
 
   test(`Should set the property selectedKeg to a given keg`, () => {
+    const thisKeg = seedKegs[4]
     const { name,
       brand,
       description,
@@ -98,11 +100,12 @@ describe(`kegListReducer`, () => {
       kegPrice,
       kegQuant,
       ordType,
-      id } = anotherKeg
-    const action = a.selectKeg(anotherKeg)
+      id } = thisKeg
+    const action = a.selectKeg(thisKeg)
 
-    expect(kegListReducer({}, action)).toEqual({ selectedKeg: {
-      [id]: { name,
+    expect(kegListReducer({}, action)).toEqual({
+      selectedKeg: { [id]: {
+        name,
         brand,
         description,
         unitPrice,
@@ -110,7 +113,8 @@ describe(`kegListReducer`, () => {
         kegPrice,
         kegQuant,
         ordType,
-        id },
-    } })
+        id,
+      } },
+    })
   })
 })
