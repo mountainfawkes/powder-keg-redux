@@ -47,7 +47,7 @@ export const updateKeg = (thisKeg, newInventory) => {
 }
 
 export const toggleForm = () => ({ type: aTypes.toggleForm })
-export const hideForm = () => ({ type: aTypes.hideForm })
+export const resetMain = () => ({ type: aTypes.resetMain })
 
 export const selectKeg = thisKeg => {
   const { name,
