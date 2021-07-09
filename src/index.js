@@ -7,7 +7,7 @@ import reducer from './Reducers/keg-list-reducer'
 import seedKegs from './Data/seedKegs'
 import App from './App'
 
-const store = createStore(reducer, Object.values(seedKegs))
+const store = createStore(reducer, seedKegs)
 
 store.subscribe(() => {
   console.log(store.getState())

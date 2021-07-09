@@ -3,7 +3,7 @@ import Keg from "./Keg"
 
 export default ({ mainKegList, handleKegSelection, handleUpdateInventory }) => (
   <>
-    {mainKegList.map(keg => (
+    {Object.values(mainKegList).map(keg => (
       <div>
         <Keg
           handleKegSelection={handleKegSelection}

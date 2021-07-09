@@ -1,10 +1,10 @@
 import { Component } from "react"
 import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import KegList from "./KegList"
 import CreateKegForm from "./CreateKegForm"
 import KegDetail from "./KegDetail"
-import Kegs from '../Data/seedKegs'
+// import Kegs from '../Data/seedKegs'
 // import kegListReducer from "../Reducers/keg-list-reducer"
 
 class Main extends Component {
@@ -143,16 +143,16 @@ Main = connect(mapStateToProps)(Main)
 
 export default Main
 
-Kegs.propTypes = {
-  Kegs: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string,
-      brand: PropTypes.string,
-      unitPrice: PropTypes.number,
-      inventory: PropTypes.number,
-      kegPrice: PropTypes.number,
-      kegQuant: PropTypes.number,
-      ordType: PropTypes.string,
-    })
-  ),
-}
+// Kegs.propTypes = {
+//   Kegs: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       name: PropTypes.string,
+//       brand: PropTypes.string,
+//       unitPrice: PropTypes.number,
+//       inventory: PropTypes.number,
+//       kegPrice: PropTypes.number,
+//       kegQuant: PropTypes.number,
+//       ordType: PropTypes.string,
+//     })
+//   ),
+// }
