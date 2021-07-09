@@ -44,7 +44,8 @@ export default (state = {}, action) => {
           id,
         } } }
     case aTypes.clearSelected:
-      return state
+      return { ...state,
+        selectedKeg: null }
     default:
       return state
   }
