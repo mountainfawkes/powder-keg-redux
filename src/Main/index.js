@@ -10,38 +10,30 @@ class Main extends Component {
   constructor(props) {
     super(props)
     console.log(props)
-    this.state = {
-      // formVisible: false,
-      // selectedKeg: null,
-    }
   }
 
   handleClick = () => {
-    if (this.props.selectedKeg != null && this.props.formVisible === true) {
+    if (this.props.selectedKeg != null && this.props.formVisible === false) {
       const { dispatch } = this.props
       const action = a.resetMain()
       console.log(action)
       dispatch(action)
-      // this.setState({
-      //   formVisible: false,
-      //   selectedKeg: null,
-      // })
     } else if (this.props.selectedKeg === null &&
        this.props.formVisible === false) {
       const { dispatch } = this.props
       const action = a.toggleForm()
       console.log(action)
       dispatch(action)
-      // this.setState(prevState => ({
-      //   formVisible: !prevState.formVisible,
-      // }))
     }
   }
 
   handleKegSelection = id => {
-    this.setState(() => ({
-      selectedKeg: this.props.mainKegList[id],
-    }))
+    const { dispatch } = this.props
+    const thisKeg = this.props.mainKegList[id]
+    console.log(thisKeg)
+    const action = a.selectKeg(thisKeg)
+    console.log(action)
+    dispatch(action)
   }
 
   handleAddNewKeg = newKeg => {
@@ -64,8 +56,9 @@ class Main extends Component {
     let visibleState = null
     let buttonText = null
 
-    if (this.state.selectedKeg != null) {
-      visibleState = <KegDetail keg={this.state.selectedKeg} />
+    if (this.props.selectedKeg != null) {
+      const kegKey = Object.keys(this.props.selectedKeg)[0]
+      visibleState = <KegDetail keg={this.props.selectedKeg[kegKey]} />
       buttonText = `Return to kegs`
     } else if (this.props.formVisible) {
       visibleState = <CreateKegForm onAddNewKeg={this.handleAddNewKeg} />
