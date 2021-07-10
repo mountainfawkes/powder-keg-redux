@@ -11,21 +11,30 @@ class Main extends Component {
     super(props)
     console.log(props)
     this.state = {
-      formVisible: false,
-      selectedKeg: null,
+      // formVisible: false,
+      // selectedKeg: null,
     }
   }
 
   handleClick = () => {
-    if (this.state.selectedKeg != null) {
-      this.setState({
-        formVisible: false,
-        selectedKeg: null,
-      })
-    } else {
-      this.setState(prevState => ({
-        formVisible: !prevState.formVisible,
-      }))
+    if (this.props.selectedKeg != null && this.props.formVisible === true) {
+      const { dispatch } = this.props
+      const action = a.resetMain()
+      console.log(action)
+      dispatch(action)
+      // this.setState({
+      //   formVisible: false,
+      //   selectedKeg: null,
+      // })
+    } else if (this.props.selectedKeg === null &&
+       this.props.formVisible === false) {
+      const { dispatch } = this.props
+      const action = a.toggleForm()
+      console.log(action)
+      dispatch(action)
+      // this.setState(prevState => ({
+      //   formVisible: !prevState.formVisible,
+      // }))
     }
   }
 
@@ -39,8 +48,6 @@ class Main extends Component {
     const { dispatch } = this.props
     const action = a.addKeg(newKeg)
     dispatch(action)
-
-    this.setState({ formVisible: false })
   }
 
   handleUpdateInventory = (id, increment) => {
@@ -60,7 +67,7 @@ class Main extends Component {
     if (this.state.selectedKeg != null) {
       visibleState = <KegDetail keg={this.state.selectedKeg} />
       buttonText = `Return to kegs`
-    } else if (this.state.formVisible) {
+    } else if (this.props.formVisible) {
       visibleState = <CreateKegForm onAddNewKeg={this.handleAddNewKeg} />
       buttonText = `Return to kegs`
     } else {
