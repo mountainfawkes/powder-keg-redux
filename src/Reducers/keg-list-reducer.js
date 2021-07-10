@@ -40,11 +40,9 @@ export default (state = {}, action) => {
       // CASE 3, reset main
 
     case aTypes.resetMain: {
-      const resetObject = {
-        formVisible: !state.formVisible,
-        selectedKeg: null,
-      }
-      return resetObject
+      // const newFormState = { ...state, formVisible: !state.formVisible }
+      // const readyState = { ...newFormState, selectedKeg: null }
+      return { ...state, formVisible: !state.formVisible, selectedKeg: null }
     }
     // CASE 3, select keg
     case aTypes.selectKeg:

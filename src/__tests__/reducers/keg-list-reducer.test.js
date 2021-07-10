@@ -120,10 +120,15 @@ describe(`kegListReducer`, () => {
 
   // TEST 6, reset main
 
+  // eslint-disable-next-line max-len
   test(`Should reset form and selected keg props to reset the main list view`, () => {
+    const state = { mainKegList: seedKegs,
+      formVisible: true,
+      selectedKeg: anotherKeg }
     const action = a.resetMain()
 
-    expect(kegListReducer({}, action)).toEqual({ formVisible: false,
+    expect(kegListReducer(state, action)).toEqual({ mainKegList: seedKegs,
+      formVisible: false,
       selectedKeg: null })
   })
 })
