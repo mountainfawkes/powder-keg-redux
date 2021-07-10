@@ -15,10 +15,6 @@ const defaultStore = {
 
 const store = createStore(reducer, defaultStore)
 
-store.subscribe(() => {
-  console.log(store.getState())
-})
-
 ReactDOM.render(
   <>
     <Provider store={store}>

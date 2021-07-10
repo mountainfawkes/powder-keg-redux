@@ -7,22 +7,19 @@ import KegDetail from "./KegDetail"
 import * as a from '../Actions/index'
 
 class Main extends Component {
-  constructor(props) {
-    super(props)
-    console.log(props)
-  }
-
   handleClick = () => {
     if (this.props.selectedKeg != null && this.props.formVisible === false) {
       const { dispatch } = this.props
       const action = a.resetMain()
-      console.log(action)
       dispatch(action)
     } else if (this.props.selectedKeg === null &&
        this.props.formVisible === false) {
       const { dispatch } = this.props
       const action = a.toggleForm()
-      console.log(action)
+      dispatch(action)
+    } else {
+      const { dispatch } = this.props
+      const action = a.toggleForm()
       dispatch(action)
     }
   }
@@ -30,9 +27,7 @@ class Main extends Component {
   handleKegSelection = id => {
     const { dispatch } = this.props
     const thisKeg = this.props.mainKegList[id]
-    console.log(thisKeg)
     const action = a.selectKeg(thisKeg)
-    console.log(action)
     dispatch(action)
   }
 
@@ -45,10 +40,8 @@ class Main extends Component {
   handleUpdateInventory = (id, increment) => {
     const { dispatch } = this.props
     const thisKeg = this.props.mainKegList[id]
-    console.log(thisKeg)
     const newInventory = thisKeg.inventory + increment
     const action = a.updateKeg(thisKeg, newInventory)
-    console.log(action)
     dispatch(action)
   }
 
