@@ -55,6 +55,8 @@ export default (state = {}, action) => {
           ordType,
           id,
         } } }
+
+    // DEFAULT CASE
     default:
       return state
   }
