@@ -49,7 +49,6 @@ describe(`kegListReducer`, () => {
         ordType,
         id,
       },
-      formVisible: false,
     })
   })
 
@@ -78,8 +77,7 @@ describe(`kegListReducer`, () => {
       kegQuant,
       ordType,
       id,
-    },
-    formVisible: false })
+    } })
   })
 
   // TEST 4, set form visibility
@@ -118,22 +116,5 @@ describe(`kegListReducer`, () => {
         id,
       } },
     })
-  })
-
-  // TEST 6, reset main
-
-  test(`Should set the formVisible prop to false`, () => {
-    const action = a.resetMain()
-
-    expect(kegListReducer({}, action)).toEqual({ formVisible: false,
-      selectedKeg: null })
-  })
-
-  // TEST 7, clear selected keg
-
-  test(`Should reset the selectedKeg prop to null`, () => {
-    const action = a.clearSelected()
-
-    expect(kegListReducer({}, action)).toEqual({ selectedKeg: null })
   })
 })
