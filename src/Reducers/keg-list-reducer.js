@@ -28,7 +28,8 @@ export default (state = {}, action) => {
         },
       }
       return { ...state,
-        mainKegList } }
+        mainKegList,
+        formVisible: false } }
 
     // CASE 2, toggle form
     case aTypes.toggleForm:
@@ -37,7 +38,7 @@ export default (state = {}, action) => {
 
     // CASE 3, reset main
     case aTypes.resetMain: {
-      return { ...state, formVisible: !state.formVisible, selectedKeg: null }
+      return { ...state, formVisible: false, selectedKeg: null }
     }
 
     // CASE 4, select keg
