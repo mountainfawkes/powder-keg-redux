@@ -117,4 +117,13 @@ describe(`kegListReducer`, () => {
       } },
     })
   })
+
+  // TEST 6, reset main
+
+  test(`Should reset form and selected keg props to reset the main list view`, () => {
+    const action = a.resetMain()
+
+    expect(kegListReducer({}, action)).toEqual({ formVisible: false,
+      selectedKeg: null })
+  })
 })

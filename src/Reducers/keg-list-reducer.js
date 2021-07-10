@@ -11,6 +11,8 @@ export default (state = {}, action) => {
     ordType,
     id } = action
   switch (action.type) {
+    // CASE 1, add keg
+
     case aTypes.addKeg: {
       const mainKegList = {
         ...state.mainKegList,
@@ -28,9 +30,23 @@ export default (state = {}, action) => {
       }
       return { ...state,
         mainKegList } }
+
+    // CASE 2, toggle form
+
     case aTypes.toggleForm:
       return { ...state,
         formVisible: !state.formVisible }
+
+      // CASE 3, reset main
+
+    case aTypes.resetMain: {
+      const resetObject = {
+        formVisible: !state.formVisible,
+        selectedKeg: null,
+      }
+      return resetObject
+    }
+    // CASE 3, select keg
     case aTypes.selectKeg:
       return { ...state,
         selectedKeg: { [id]: {
