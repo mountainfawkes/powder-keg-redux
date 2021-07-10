@@ -40,9 +40,11 @@ class Main extends Component {
   handleUpdateInventory = (id, increment) => {
     const { dispatch } = this.props
     const thisKeg = this.props.mainKegList[id]
-    const newInventory = thisKeg.inventory + increment
-    const action = a.updateKeg(thisKeg, newInventory)
-    dispatch(action)
+    if (thisKeg.inventory + increment >= 0) {
+      const newInventory = thisKeg.inventory + increment
+      const action = a.updateKeg(thisKeg, newInventory)
+      dispatch(action)
+    }
   }
 
   render() {
