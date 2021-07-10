@@ -49,7 +49,8 @@ describe(`kegListReducer`, () => {
         ordType,
         id,
       },
-    } })
+    },
+    formVisible: false })
   })
 
   // TEST 3, should update the inventory by the given increment
@@ -77,7 +78,8 @@ describe(`kegListReducer`, () => {
       kegQuant,
       ordType,
       id,
-    } } })
+    } },
+    formVisible: false })
   })
 
   // TEST 4, set form visibility
