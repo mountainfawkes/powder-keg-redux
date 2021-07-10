@@ -37,7 +37,7 @@ describe(`kegListReducer`, () => {
       id } = anotherKeg
     action = a.addKeg(anotherKeg)
 
-    expect(kegListReducer({}, action)).toEqual({
+    expect(kegListReducer({}, action)).toEqual({ mainKegList: {
       [id]: {
         name,
         brand,
@@ -49,7 +49,7 @@ describe(`kegListReducer`, () => {
         ordType,
         id,
       },
-    })
+    } })
   })
 
   // TEST 3, should update the inventory by the given increment
@@ -67,7 +67,7 @@ describe(`kegListReducer`, () => {
     const newInventory = inventory + 1
     const action = a.updateKeg(anotherKeg, newInventory)
 
-    expect(kegListReducer({}, action)).toEqual({ [id]: {
+    expect(kegListReducer({}, action)).toEqual({ mainKegList: { [id]: {
       name,
       brand,
       description,
@@ -77,7 +77,7 @@ describe(`kegListReducer`, () => {
       kegQuant,
       ordType,
       id,
-    } })
+    } } })
   })
 
   // TEST 4, set form visibility
