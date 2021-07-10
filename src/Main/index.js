@@ -9,7 +9,7 @@ import * as a from '../Actions/index'
 class Main extends Component {
   constructor(props) {
     super(props)
-    console.log(props.mainKegList)
+    console.log(props)
     this.state = {
       formVisible: false,
       selectedKeg: null,
@@ -107,9 +107,9 @@ Main.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  mainKegList: state.seedKegs,
-  selectedKeg: state,
-  formVisible: state,
+  mainKegList: state.mainKegList,
+  selectedKeg: state.selectedKeg,
+  formVisible: state.formVisible,
 })
 
 // eslint-disable-next-line no-class-assign

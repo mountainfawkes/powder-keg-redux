@@ -8,7 +8,7 @@ import seedKegs from './Data/seedKegs'
 import App from './App'
 
 const defaultStore = {
-  seedKegs,
+  mainKegList: seedKegs,
   selectedKeg: null,
   formVisible: false,
 }
